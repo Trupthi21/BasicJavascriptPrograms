@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Even Odd Finder by Trupthi Shetty</title>
+    <style>
+        * { font-size: 50px; text-align: center; }
+        h1 { background-color: black; color: white; }
+        body{ background-color: #fff8dc;}
+    </style>
+</head>
+<body>
+    <h1>Even Odd Finder App</h1>
+    <form onsubmit="check()">
+        <input type="number" id="num" placeholder="Enter Integer" />
+        <br><br/>
+        <input type="submit" value="Find Even/Odd" />
+    </form>
+    <h2 id="msg"></h2>
+
+    <script>
+        function check()
+        {
+            event.preventDefault();
+
+            if (num.value === "")
+            {
+                alert("Please Enter Integer");
+                msg.innerHTML = "";
+                num.focus();
+                return;
+            }
+
+            let n = parseInt(num.value);
+            let ans = n % 2 === 0 ? "even" : "odd";
+            msg.innerHTML = ans;
+        }
+    </script>
+</body>
+</html>
