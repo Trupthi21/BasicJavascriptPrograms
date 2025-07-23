@@ -1,38 +1,54 @@
 <html>
 <head>
-    <title>Even Odd Finder by Trupthi Shetty</title>
+    <title>Name App by Trupthi Shetty</title>
     <style>
-        * { font-size: 50px; text-align: center; }
-        h1 { background-color: black; color: white; }
-        body{ background-color: #fff8dc;}
+        * {
+            text-align: center;
+            font-size: 50px;
+        }
+        body {
+            background-color: azure;
+        }
     </style>
 </head>
 <body>
-    <h1>Even Odd Finder App</h1>
-    <form onsubmit="check()">
-        <input type="number" id="num" placeholder="Enter Integer" />
-        <br><br/>
-        <input type="submit" value="Find Even/Odd" />
+    <h1>NAME GREETING APP</h1>
+    <form onsubmit="show(event)">
+        <input type="text" placeholder="Enter Your Name" id="name" />
+        <br /><br />
+        <input type="submit" />
     </form>
-    <h2 id="msg"></h2>
+    <h2 id="msg"/h2>
 
     <script>
-        function check()
-        {
+        function show() {
             event.preventDefault();
 
-            if (num.value === "")
-            {
-                alert("Please Enter Integer");
-                msg.innerHTML = "";
-                num.focus();
+            let name = document.getElementById("name");
+            let msg = document.getElementById("msg");
+
+            if (name.value === "") {
+                alert("Name should contain only alphabets");
+                name.focus();
                 return;
             }
 
-            let n = parseInt(num.value);
-            let ans = n % 2 === 0 ? "even" : "odd";
+            let d = new Date();
+            let hr = d.getHours();
+            let ans = "";
+
+            if (hr < 12)
+                ans = "Good Morning " + name.value;
+            else if (hr < 16)
+                ans = "Good Afternoon " + name.value;
+            else if (hr < 20)
+                ans = "Good Evening " + name.value;
+            else 
+                ans =" Good Night " + namevalue;
             msg.innerHTML = ans;
         }
     </script>
 </body>
 </html>
+
+ 
